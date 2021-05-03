@@ -1,3 +1,4 @@
 Rails.application.routes.draw do
-	get '/' ,to: 'tops#index'
+	root 'tops#index'
+	devise_for :users
 end
