@@ -27,8 +27,11 @@ class Users::ConfirmationsController < Devise::ConfirmationsController
     else
       # activate
       self.resource = resource_class.confirm_by_token(params[:confirmation_token])
-      redirect_to new_user_session_path, notice: 'メールアドレスを確認しました。'
+      render :confirmed, notice: 'メールアドレスを確認しました。'
     end
+  end
+
+  def confirmed
   end
 
   # protected
