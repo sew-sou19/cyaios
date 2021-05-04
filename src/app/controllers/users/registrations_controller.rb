@@ -10,9 +10,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # POST /resource
-  # def create
-  #   super
-  # end
+  def create
+    @user = User.new(sign_up_params)
+    render :new and return unless @user.valid?
+    @user.save
+    render :preregisted
+  end
 
   # GET /resource/edit
   # def edit
@@ -37,6 +40,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # def cancel
   #   super
   # end
+  def preregisted
+    
+  end
 
   protected
 

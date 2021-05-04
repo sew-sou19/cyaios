@@ -7,6 +7,7 @@ Rails.application.routes.draw do
       confirmations: 'users/confirmations',
     }
   devise_scope :user do
+    get 'preregisted', to: 'users/registrations#preregisted'
     put 'confirmation', to: 'users/confirmations#show', as: :back_confirmation
   end
 end
