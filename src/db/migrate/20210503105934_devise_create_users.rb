@@ -4,7 +4,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.1]
 	def change
 	  create_table :users do |t|
 		## Database authenticatable
-		t.string :email,              null: false, default: ""
+		t.string :email,              null: false, default: "", unique: true
 		t.string :encrypted_password, null: false, default: ""
   
 		## Recoverable
@@ -34,7 +34,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.1]
   
 		t.string 	:first_name,	null: false, default: ""
 		t.string 	:last_name,		null: false, default: ""
-		t.date		:birthday,		null: false
+		t.date		:birthday,		null: false, default: '1900/1/1'
 		t.timestamps null: false
 	  end
   

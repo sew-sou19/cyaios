@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 2021_05_03_105934) do
     t.datetime "locked_at"
     t.string "first_name", default: "", null: false
     t.string "last_name", default: "", null: false
-    t.date "birthday", null: false
+    t.date "birthday", default: "1900-01-01", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
