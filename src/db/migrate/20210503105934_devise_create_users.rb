@@ -34,7 +34,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.1]
   
 		t.string 	:first_name,	null: false, default: ""
 		t.string 	:last_name,		null: false, default: ""
-		t.date		:birthday,		null: false, default: '1900/1/1'
+		t.date		:birthday,		null: false, default: "1900-01-01"
 		t.timestamps null: false
 	  end
   
