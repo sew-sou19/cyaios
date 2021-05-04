@@ -5,7 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :confirmable
 
-  # バリデーション 
+  # 繝舌Μ繝�繝ｼ繧ｷ繝ｧ繝ｳ 
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+
   before_save { self.email = email.downcase }
   validates :email,     {presence: true, uniqueness: true, format: { with: VALID_EMAIL_REGEX }}
   validates :password,  {length: { in: 8..32 }, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]/}}
@@ -14,9 +16,7 @@ class User < ApplicationRecord
     validates :first_name
   end
 
-  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-
-  # Confirmメール有効期限のチェック
+  # Confirm繝｡繝ｼ繝ｫ譛牙柑譛滄剞縺ｮ繝√ぉ繝�繧ｯ
   def is_confirmation_period_expired?
     self.confirmation_period_expired?
   end
