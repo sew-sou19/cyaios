@@ -30,8 +30,8 @@ ActiveRecord::Schema.define(version: 2021_05_03_105934) do
     t.integer "failed_attempts", default: 0, null: false
     t.string "unlock_token"
     t.datetime "locked_at"
-    t.string "first_name", null: false
-    t.string "last_name", null: false
+    t.string "first_name", default: "", null: false
+    t.string "last_name", default: "", null: false
     t.date "birthday", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
