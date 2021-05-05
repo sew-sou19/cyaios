@@ -27,7 +27,8 @@ class Users::ConfirmationsController < Devise::ConfirmationsController
     else
       # activate
       self.resource = resource_class.confirm_by_token(params[:confirmation_token])
-      render :confirmed, notice: 'メールアドレスを確認しました。'
+      user = User.find_by(id: params[:format]).update_attribute(:account_type_id, 2)
+      render :confirmed
     end
   end
 
