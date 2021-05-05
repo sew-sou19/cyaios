@@ -40,8 +40,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # def cancel
   #   super
   # end
+
   def preregisted
-    
   end
 
   protected
