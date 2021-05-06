@@ -2,7 +2,7 @@
 	.account_page__inner {
 	  width: 482px;
 	  margin: 0 auto;
-	  padding: 40px 60px 10px;
+	  padding: 40px 60px 40px;
 	  background-color: #fff;
 	  border: $border_style_input;
 	  border-radius: 25px;
@@ -78,6 +78,11 @@
 	  text-align: center;
 	  border: none;
 	  border-radius: 2px;
+    cursor: pointer;
+    &:hover {
+      opacity: 0.7;
+      transition: 0.6s;  
+    }
 	}
   
 	input[type='submit'] {
@@ -135,4 +140,9 @@
 	  padding: 0;
 	  font-size: 13px;
 	}
+  }
+
+  .alert {
+    color: #d65f4c;
+	  font-size: 14px;
   }

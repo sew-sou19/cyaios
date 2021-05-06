@@ -29,7 +29,6 @@
       display: flex;
       align-items: center;
       &__btn {
-        height: 64px;
         padding: 22px 8px;
         &:hover {
           background-color: $color_theme_opacity;
@@ -38,7 +37,6 @@
         }
         & a {
           display: inline-block;
-          height: 64px;
           color: white;
           text-decoration: none;
         }
