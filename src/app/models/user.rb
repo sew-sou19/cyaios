@@ -11,14 +11,15 @@ class User < ApplicationRecord
   before_save { self.email = email.downcase }
   validates :email,     {presence: true, format: { with: VALID_EMAIL_REGEX }}
   validates :password,  {length: { in: 8..32 }, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]/}}
-  with_options presence: true do
-    validates :last_name
-    validates :first_name
-    validates :birthday
-  end
 
   # Confirmメール有効期限のチェック
   def is_confirmation_period_expired?
     self.confirmation_period_expired?
+  end
+
+  def get_user_name
+    mail = self.email
+    index = mail.index("@") - 1
+    user_name = mail.slice(0..index)
   end
 end
