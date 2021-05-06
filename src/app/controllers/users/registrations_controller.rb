@@ -12,6 +12,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
     @user = User.new(sign_up_params)
+    @user.user_name = @user.get_user_name
     render :new and return unless @user.valid?
     @user.save
     render :preregisted
