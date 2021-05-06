@@ -28,6 +28,7 @@ class Users::ConfirmationsController < Devise::ConfirmationsController
       # activate
       self.resource = resource_class.confirm_by_token(params[:confirmation_token])
       user = User.find_by(id: params[:format]).update_attribute(:account_type_id, 2)
+      sign_in(resource)
       render :confirmed
     end
   end
