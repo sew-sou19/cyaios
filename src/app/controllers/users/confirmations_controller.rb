@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class Users::ConfirmationsController < Devise::ConfirmationsController
+  before_action :user_not_logged_in?, only: [:new]
   # GET /resource/confirmation/new
   # def new
   #   super
@@ -36,8 +37,12 @@ class Users::ConfirmationsController < Devise::ConfirmationsController
   def confirmed
   end
 
-  # protected
-
+  protected
+  def user_not_logged_in?
+    if user_signed_in?
+      redirect_to root_path
+    end
+  end
   # The path used after resending confirmation instructions.
   # def after_resending_confirmation_instructions_path_for(resource_name)
   #   super(resource_name)
