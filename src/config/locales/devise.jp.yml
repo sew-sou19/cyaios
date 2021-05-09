@@ -52,7 +52,7 @@ ja:
         action: メールアドレスの確認
         greeting: "%{recipient}様"
         instruction: 以下のリンクをクリックし、メールアドレスの確認手続を完了させてください。
-        subject: メールアドレス確認メール
+        subject: 【Cyaios】メールアドレスのご確認
       email_changed:
         greeting: こんにちは、%{recipient}様。
         message: あなたのメール変更（%{email}）のお知らせいたします。
@@ -67,7 +67,7 @@ ja:
         instruction: パスワード再設定の依頼を受けたため、メールを送信しています。下のリンクからパスワードの再設定ができます。
         instruction_2: パスワード再設定の依頼をしていない場合、このメールを無視してください。
         instruction_3: パスワードの再設定は、上のリンクから新しいパスワードを登録するまで完了しません。
-        subject: パスワードの再設定について
+        subject: 【Cyaios】パスワードの再設定のお知らせ
       unlock_instructions:
         action: アカウントのロック解除
         greeting: "%{recipient}様"

@@ -3,4 +3,5 @@
     .account_page__inner--left.account_page__header
       %h2 メール認証が完了しました。
     .account_page__inner--right.user-form
-      = link_to "ログインページへ", new_session_path(resource_name), class: "btn"
+      .actions
+        = link_to "トップページへ", root_path, class: "btn"
