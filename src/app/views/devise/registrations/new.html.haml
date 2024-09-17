@@ -1,0 +1,21 @@
+#account_page.account_page
+  .account_page__inner
+    .account_page__header
+      %h2 Cyaios
+      %h5 新規登録
+    .account_page__inner--user_form
+      = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+        = render "devise/shared/error_messages", resource: resource
+        .field
+          .field_input
+            = f.email_field :email, autocomplete: "email", placeholder: 'メールアドレス'
+        .field
+          .field_input
+            = f.password_field :password, autocomplete: "new-password", placeholder: 'パスワード(英数字を含む8文字以上32文字以下)'
+        .field
+          .field_input
+            = f.password_field :password_confirmation, autocomplete: "new-password", placeholder: 'パスワード(確認用)'
+        .actions
+          = f.submit "新規登録", class: "btn"
+    .devise_links
+      = render "devise/shared/links"

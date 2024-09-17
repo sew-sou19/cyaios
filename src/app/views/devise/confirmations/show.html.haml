@@ -1,0 +1,7 @@
+#account_page.account_page
+  .account_page__inner
+    .account_page__inner--left.account_page__header
+      %h2 アカウント登録が完了しているかリンクが不正です。
+    .account_page__inner--right.user-form
+      .actions
+        = link_to "認証メール再送画面へ", new_user_confirmation_path(resource_name), class: "btn"

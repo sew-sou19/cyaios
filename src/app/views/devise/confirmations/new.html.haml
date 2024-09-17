@@ -1,0 +1,14 @@
+#account_page.account_page
+  .account_page__inner
+    .account_page__inner--left.account_page__header
+      %h2 認証メール再送
+    .account_page__inner--right.user-form
+      = form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f|
+        = render "devise/shared/error_messages", resource: resource
+        .field
+          .field_input
+            = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'メールアドレスを入力', value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email)
+        .actions
+          = f.submit "メールを送信する", class: "btn"
+    .devise_links
+      = render "devise/shared/links"
